@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deliveggy - Encontre sua Receita</title>
+    
+    <!-- Fontes do Google e Ícones (Font Awesome) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Link para o seu arquivo de estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="container">
+        <div class="logo">Deliveggy</div>
+        <button class="carrinho-btn" id="carrinho-btn-abrir">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="carrinho-contador hidden" id="carrinho-contador">0</span>
+        </button>
+    </header>
+
+    <main class="container">
+        <!-- VISÃO DE LISTA DE PRATOS -->
+        <div id="pratos-view">
+            <div class="search-container">
+                <h1>Busque sua Receita Favorita</h1>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Ex: Arrabiata, Salmon, Chicken...">
+                    <button id="search-btn"><i class="fa-solid fa-search"></i></button>
+                </div>
+            </div>
+            <div id="pratos-grid">
+                <!-- Cards de pratos serão inseridos aqui via JS -->
+                 <div class="loader-container" id="loader">
+                    <div class="loader"></div>
+                </div>
+            </div>
+             <p id="nenhum-resultado" class="hidden">Nenhum prato encontrado com esse nome.</p>
+        </div>
+
+        <!-- VISÃO DE DETALHES DO PRATO -->
+        <div id="detalhes-view" class="hidden">
+            <div id="detalhes-header-container">
+                <!-- Cabeçalho do prato será inserido aqui via JS -->
+            </div>
+            <div id="detalhes-content">
+                 <!-- Detalhes do prato (ingredientes, instruções) serão inseridos aqui -->
+            </div>
+        </div>
+    </main>
+
+    <!-- MODAL DO CARRINHO -->
+    <div id="carrinho-modal-overlay" class="modal-overlay hidden">
+        <div class="carrinho-modal">
+            <div class="carrinho-header">
+                <h2>Seu Pedido</h2>
+                <button class="btn-fechar" id="carrinho-btn-fechar">&times;</button>
+            </div>
+            <div id="carrinho-itens">
+                <!-- Itens do carrinho serão inseridos aqui via JS -->
+            </div>
+            <div id="carrinho-total" class="carrinho-total">
+                <!-- Total do carrinho será inserido aqui via JS -->
+            </div>
+            <button class="btn-finalizar" id="btn-finalizar">Finalizar Pedido</button>
+        </div>
+    </div>
+
+    <!-- Link para o seu arquivo de script JavaScript (defer garante que ele carregue após o HTML) -->
+    <script src="script.js" defer></script>
+</body>
+</html>
